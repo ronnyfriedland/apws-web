@@ -1,4 +1,3 @@
-import logging
 
 import requests
 
@@ -17,11 +16,10 @@ class OpenSearchClient:
 
         must_clauses = [{ "term": {key: value} } for key, value in filter_params.items()]
 
-        logging.info({"size": 100, "query": {"bool": {"filter": must_clauses}}, "sort": [{"@timestamp": {"order": "desc"}}]})
-
         response = requests.post(
             url=f"http{'s' if self.use_ssl else ''}://{self.host}:{self.port}/{index}-*/_search",
-            json={"size": 100, "query": {"bool": {"filter": must_clauses}}, "sort": [{"@timestamp": {"order": "desc"}}]},
+            json={"size": 100, "query": {"bool": {"filter": must_clauses}},
+                  "sort": [{"@timestamp": {"order": "desc"}}]},
             auth=self.http_auth,
             verify=self.ssl_verify
         )
@@ -50,4 +48,4 @@ class OpenSearchClient:
 
     @staticmethod
     def _parse_filter_params(**kwargs) -> dict[str, str]:
-        return {key: value for key, value in kwargs.items() if value is not None and value is not ""}
+        return {key: value for key, value in kwargs.items() if value is not None and value != ""}

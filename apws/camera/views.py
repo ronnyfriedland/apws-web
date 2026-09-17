@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import logging
 import socket
-from typing import Generator
+from collections.abc import Generator
 
 from django.conf import settings
 from django.http import HttpRequest, StreamingHttpResponse

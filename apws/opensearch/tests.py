@@ -85,7 +85,9 @@ class OpenSearchClientTests(SimpleTestCase):
         self.client.find("weather", name="room-1", timestamp="gestern")
         mock_requests.post.assert_called_with(
             url="http://localhost:9200/weather-*/_search",
-            json={'size': 100, 'query': {'bool': {'filter': [{'term': {'name': 'room-1'}}, {'term': {'timestamp': 'gestern'}}]}}, 'sort': [{'@timestamp': {'order': 'desc'}}]},
+            json={'size': 100,
+                  'query': {'bool': {'filter': [{'term': {'name': 'room-1'}}, {'term': {'timestamp': 'gestern'}}]}},
+                  'sort': [{'@timestamp': {'order': 'desc'}}]},
             auth=None,
             verify=False,
         )
