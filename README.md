@@ -2,6 +2,8 @@
 
 A Django web application using OpenSearch as its primary data backend.
 
+[![Docker Image CI](https://github.com/ronnyfriedland/apws-web/actions/workflows/docker-image.yml/badge.svg)](https://github.com/ronnyfriedland/apws-web/actions/workflows/docker-image.yml)
+
 ## Architectural Concept
 
 This project is a Django application that bypasses a traditional relational database in favor of OpenSearch for all data persistence. The architecture is designed to leverage the strengths of OpenSearch for search and analytics-heavy workloads while using Django for its robust web framework capabilities.
