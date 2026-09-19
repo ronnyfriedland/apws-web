@@ -11,7 +11,20 @@ jobs:
 
     runs-on: ubuntu-latest
     environment: BUILD
-    
+
+    env:
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      DEBUG: ${{ secrets.DEBUG }}
+      ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
+      OPENSEARCH_HOST: ${{ secrets.OPENSEARCH_HOST }}
+      OPENSEARCH_PORT: ${{ secrets.OPENSEARCH_PORT }}
+      OPENSEARCH_USER: ${{ secrets.OPENSEARCH_USER }}
+      OPENSEARCH_PASSWORD: ${{ secrets.OPENSEARCH_PASSWORD }}
+      OPENSEARCH_USE_SSL: ${{ secrets.OPENSEARCH_USE_SSL }}
+      OPENSEARCH_SSL_VERIFY: ${{ secrets.OPENSEARCH_SSL_VERIFY }}
+      CAMERA_HOST: ${{ secrets.CAMERA_HOST }}
+      CAMERA_PORT: ${{ secrets.CAMERA_PORT }}
+
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
