@@ -14,16 +14,16 @@ jobs:
 
     env:
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
-      DEBUG: bool(${{ secrets.DEBUG }})
+      DEBUG: ${{ secrets.DEBUG }}
       ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
       OPENSEARCH_HOST: ${{ secrets.OPENSEARCH_HOST }}
-      OPENSEARCH_PORT: int(${{ secrets.OPENSEARCH_PORT }})
+      OPENSEARCH_PORT: ${{ secrets.OPENSEARCH_PORT }}
       OPENSEARCH_USER: ${{ secrets.OPENSEARCH_USER }}
       OPENSEARCH_PASSWORD: ${{ secrets.OPENSEARCH_PASSWORD }}
-      OPENSEARCH_USE_SSL: bool(${{ secrets.OPENSEARCH_USE_SSL }})
-      OPENSEARCH_SSL_VERIFY: bool(${{ secrets.OPENSEARCH_SSL_VERIFY }})
+      OPENSEARCH_USE_SSL: ${{ secrets.OPENSEARCH_USE_SSL }}
+      OPENSEARCH_SSL_VERIFY: ${{ secrets.OPENSEARCH_SSL_VERIFY }}
       CAMERA_HOST: ${{ secrets.CAMERA_HOST }}
-      CAMERA_PORT: int(${{ secrets.CAMERA_PORT }})
+      CAMERA_PORT: ${{ secrets.CAMERA_PORT }}
 
     steps:
     - uses: actions/checkout@v4
