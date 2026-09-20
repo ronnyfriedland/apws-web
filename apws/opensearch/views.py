@@ -20,7 +20,7 @@ class WeatherDataListView(View):
         data = SearchDataManager("weather").search(**kwargs)
 
         context = {
-            "data": data,
+            "data": data[::-1],
             "date_filter": date_filter,
             "name_filter": name_filter,
         }
@@ -35,7 +35,7 @@ class HygrometerDataListView(View):
         data = SearchDataManager("hygrometer").search(**kwargs)
 
         context = {
-            "data": data,
+            "data": data[::-1],
             "date_filter": date_filter,
         }
         return render(request, "hygrometer.html", context)
