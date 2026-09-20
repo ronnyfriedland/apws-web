@@ -4,6 +4,7 @@ A Django web application using OpenSearch as its primary data backend.
 
 [![Docker Image CI](https://github.com/ronnyfriedland/apws-web/actions/workflows/docker-image.yml/badge.svg)](https://github.com/ronnyfriedland/apws-web/actions/workflows/docker-image.yml)
 [![Pylint](https://github.com/ronnyfriedland/apws-web/actions/workflows/pylint.yml/badge.svg)](https://github.com/ronnyfriedland/apws-web/actions/workflows/pylint.yml)
+[![Django CI](https://github.com/ronnyfriedland/apws-web/actions/workflows/test.yml/badge.svg)](https://github.com/ronnyfriedland/apws-web/actions/workflows/test.yml)
 
 ## Architectural Concept
 
